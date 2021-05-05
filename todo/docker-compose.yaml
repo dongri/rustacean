@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  todo:
+    container_name: todo
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+    logging:
+      options:
+        max-size: "500k"
+    ports:
+      - "8080:8080"
